@@ -1,4 +1,4 @@
-function [ pdbStructure,ANMValue ] =ANM(pdbStructure,mode,checkeigenvalue,cutOff,contactConstant,bondConstant,bond)
+function [pdbStructure,ANMValue] =ANM(pdbStructure,mode,checkeigenvalue,cutOff,contactConstant,bondConstant,bond)
 %%%%%%% need maforceANM.m,readkdatModesANM.m %%%%%%%%%%%
 % input:
 %	pdbStructure is the object gotten from cafrompdb
@@ -68,5 +68,4 @@ end
 lastmode=6+mode;
 
 ANMValue=S(7:lastmode);
-
 pdbStructure=setCoordLikeData(pdbStructure,U(:,7:lastmode),'ANM');

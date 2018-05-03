@@ -1,4 +1,4 @@
-function [atomStructure] = createAtom(resname,atmname,coord,record,subunit,bval,atomno,resno)
+function [atomStructure] = createAtom(resname,atmname,coord,record,subunit,bval,atomno,resno,internalResno)
 %%%%%%%%%%%%%%% need %%%%%%%%%%%%%%%
 % input:
 %   resname      (chars)
@@ -40,7 +40,9 @@ if ~exist('resno','var')
 elseif class(resno) == 'double'
     resno = num2str(resno);
 end
-
+if ~exist('internalResno','var')
+    internalResno = 0;
+end
 
 
 atomStructure.resname = resname;
@@ -56,7 +58,8 @@ atomStructure.occupancy = 0;
 atomStructure.alternate = ' ';
 atomStructure.charge = '';
 atomStructure.segment = '';
+atomStructure.internalResno = internalResno;
 atomStructure = setElementSymbol(atomStructure);
-atomStructure = assignMass(atomStructure);
+
 
 

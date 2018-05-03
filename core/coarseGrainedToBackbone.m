@@ -2,7 +2,7 @@ function [backboneModel]=coarseGrainedToBackbone(template,CGModel)
 %%%%%%% need getAtomByAtomName,getCoordfromca,rmsdfit,refreshCoordToCA %%%%%%%%
 % input:
 %   template is the ca object that contain all Atom of the CGModel
-%   CGMode is the ca object that just contain Ca atom.
+%   CGModel is the ca object that just contain Ca atom.
 % return:
 %   backboneModel is ca object just contain N Ca C O atom.
 %%%%%%% need getAtomByAtomName,getCoordfromca,rmsdfit,refreshCoordToCA %%%%%%%%
